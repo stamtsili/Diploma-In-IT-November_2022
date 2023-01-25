@@ -32,10 +32,17 @@
 
 <script>
     var randomNumber = parseInt(Math.random()*10);
+    
+/* 
+    if (randomNumber == userNumber) {
+      comparison = 'Success';
+    } else {
+      comparison = 'Failure';
+    } */
 
     function checkGuess() {
         var userNumber   = parseInt(document.getElementById("Number Guess").value);
-        var comparison   = randomNumber == userNumber ? 'Success' : 'Failure';
+        var comparison   = (randomNumber == userNumber) ? 'Success' : 'Failure';
         
 
         alert("Random: " + randomNumber + " Guess: " + userNumber + " " + comparison);
