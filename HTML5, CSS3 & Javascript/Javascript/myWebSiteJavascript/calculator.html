@@ -41,6 +41,7 @@
             <button type="button" onclick="Subtract()" class="btn btn-primary">-</button>
             <button type="button" onclick="Multiply()" class="btn btn-primary">*</button>
             <button type="button" onclick="Divide()" class="btn btn-primary">/</button>
+            <button type="button" onclick="exponential()" class="btn btn-primary">^</button>
           </form>
     </div>
 </body>
@@ -89,7 +90,18 @@
         
         alert(total);
     }
+    function exponential() {
+        var number1 = Number(document.getElementById("Number 1").value);
+        var number2 = Number(document.getElementById("Number 2").value);
+        var number3 = Number(document.getElementById("Number 3").value);
+        var total   = 0;
+
+        total = (number1** number2**) number3;
+        
+        alert(total);
+    }
     
+
 </script>
 
 </html>
