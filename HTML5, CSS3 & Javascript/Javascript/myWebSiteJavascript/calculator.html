@@ -37,36 +37,64 @@
               </div>
               <br/>
 
+               <div class="form-group">
+                <label for="CheckType">Check Type</label>
+                <input type="text" class="form-control" id="CheckType" placeholder="CheckType">
+              </div>
+              <br/>
+
             <button type="button" onclick="Sum()" class="btn btn-primary">+</button>
             <button type="button" onclick="Subtract()" class="btn btn-primary">-</button>
             <button type="button" onclick="Multiply()" class="btn btn-primary">*</button>
             <button type="button" onclick="Divide()" class="btn btn-primary">/</button>
-            <button type="button" onclick="exponential()" class="btn btn-primary">^</button>
+            <br/>
           </form>
     </div>
 </body>
 
 <script>
     function Sum() {
-        var number1 = Number(document.getElementById("Number 1").value);
-        var number2 = Number(document.getElementById("Number 2").value);
-        var number3 = Number(document.getElementById("Number 3").value);
-        var total   = 0;
+        var number1   = Number(document.getElementById("Number 1").value);
+        var number2   = Number(document.getElementById("Number 2").value);
+        var number3   = Number(document.getElementById("Number 3").value);
+        var checkType = (document.getElementById("CheckType").value) == 'yes';
+        var total     = 0;
 
+        
         total = number1 + number2 + number3;
 
-        alert(total);
+        if (checkType) {
+            isNumber1Integer = number1 == parseInt(number1);
+            isNumber2Integer = number2 == parseInt(number2);
+            isNumber3Integer = number3 == parseInt(number3);
+
+            type = (isNumber1Integer && isNumber2Integer && isNumber3Integer) ? 'Integer: ' : 'Real: ';
+            alert(type + total);
+        } else {
+            alert(total);
+        }
+        
     }
 
     function Subtract() {
         var number1 = Number(document.getElementById("Number 1").value);
         var number2 = Number(document.getElementById("Number 2").value);
         var number3 = Number(document.getElementById("Number 3").value);
+        var checkType = (document.getElementById("CheckType").value) == 'yes';
         var total   = 0;
 
         total = number1 - number2 - number3;
 
-        alert(total);
+        if (checkType) {
+            isNumber1Integer = number1 == parseInt(number1);
+            isNumber2Integer = number2 == parseInt(number2);
+            isNumber3Integer = number3 == parseInt(number3);
+
+            type = (isNumber1Integer && isNumber2Integer && isNumber3Integer) ? 'Integer: ' : 'Real: ';
+            alert(type + total);
+        } else {
+            alert(total);
+        }
     }
 
     function Multiply() {
@@ -90,18 +118,7 @@
         
         alert(total);
     }
-    function exponential() {
-        var number1 = Number(document.getElementById("Number 1").value);
-        var number2 = Number(document.getElementById("Number 2").value);
-        var number3 = Number(document.getElementById("Number 3").value);
-        var total   = 0;
-
-        total = (number1** number2) **number3;
-        
-        alert(total);
-    }
     
-
 </script>
 
 </html>
