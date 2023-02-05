@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/jquery-3.6.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <title>Calculator</title>
+</head>
+
+<body>
+    <div class="container mt-5 pt-5">
+        <h1 class="text-center">Calculator</h1>
+        <p id="result"></p>
+
+        <div id="numberOfVariablesDiv" class="form-group">
+            <label for="numberOfVariables">Choose up to 3 variables</label>
+            <input type="number" class="form-control" id="numberOfVariables" placeholder="Number Of Variables">
+          </div>
+          <button type="button" id="numberOfVariablesButton" class="btn btn-primary">Apply</button>
+          <hr/>
+
+        <form>
+            <div id="Number1Field" class="form-group">
+              <label for="Number1">Number 1</label>
+              <input type="number" class="form-control" id="Number1" placeholder="Number1">
+              <hr/>
+            </div>
+
+            <div id="Number2Field" class="form-group">
+                <label for="Number2">Number 2</label>
+                <input type="number" class="form-control" id="Number2" placeholder="Number2">
+                <hr/>
+              </div>
+
+              <div id="Number3Field" class="form-group">
+                <label for="Number3">Number 3</label>
+                <input type="number" class="form-control" id="Number3" placeholder="Number3">
+              </div>
+              <br/>
+
+              <div class="form-group">
+                <label for="Check Type">Check Type</label>
+                <input type="text" class="form-control" id="Check Type" placeholder="Check Type">
+              </div>
+              <br/>
+
+            <button type="button" id="sum" class="btn btn-primary">+</button>
+            <button type="button" class="btn btn-primary">-</button>
+            <button type="button" class="btn btn-primary">*</button>
+            <button type="button" class="btn btn-primary">/</button>
+
+            <!-- DOM Manual
+            https://www.w3schools.com/js/js_htmldom_events.asp
+            https://www.w3schools.com/jsref/dom_obj_event.asp
+            -->
+          </form>
+    </div>
+</body>
+
+<script>
+    //     $(document).ready(function(){
+
+    //     $("#sum").click(function(){
+    //         //alert($("#Number2").val());
+    //         //$("#Number2").hide();
+    //     })
+    // })
+
+    $(document).ready(function(){
+        
+        $("#numberOfVariablesButton").click(function(){ //dblclick - mouseenter
+            switch ($("#numberOfVariables").val()) {
+            case '1':
+            $("#Number2Field").hide();
+            $("#Number3Field").fadeOut('slow');
+            // slideToggle 
+            // slide
+            break;
+
+            case '2':
+            $("#Number3Field").hide();
+            $("#Number2Field").show();
+            break;
+
+            default:
+                $("#Number2Field").show();
+                $("#Number3Field").fadeIn('slow', function(){
+                    alert('Default value (3) enabled');
+                });
+
+                $(".form-group").css("font-weight", "bold");
+                $("#numberOfVariablesDiv").removeClass("form-group");
+        }
+        })
+    })
+</script>
+
+
+</html>
