@@ -19,7 +19,7 @@
         <h1 class="text-center">Calculator</h1>
         <p id="result"></p>
 
-        <div id="numberOfVariablesDiv" class="form-group">
+        <div id="numberOfVariablesDiv">
             <label for="numberOfVariables">Choose up to 3 variables</label>
             <input type="number" class="form-control" id="numberOfVariables" placeholder="Number Of Variables">
           </div>
@@ -65,41 +65,43 @@
 </body>
 
 <script>
-    //     $(document).ready(function(){
+        // $(document).ready(
+        //   function(){
+        //     $("#sum").click(
+        //       function(){
+        //         alert($("#Number2").val());
+        //         $("#Number2").hide();
+        //     })
+        // })
 
-    //     $("#sum").click(function(){
-    //         //alert($("#Number2").val());
-    //         //$("#Number2").hide();
-    //     })
-    // })
-
-    $(document).ready(function(){
+     $(document).ready(function(){
         
-        $("#numberOfVariablesButton").click(function(){ //dblclick - mouseenter
-            switch ($("#numberOfVariables").val()) {
-            case '1':
-            $("#Number2Field").hide();
-            $("#Number3Field").fadeOut('slow');
-            // slideToggle 
-            // slide
-            break;
+         $("#numberOfVariablesButton").click(function(){ //dblclick - mouseenter
+          
+             switch ($("#numberOfVariables").val()) {
+             case '1':
+             $("#Number2Field").hide();
+             $("#Number3Field").fadeOut('slow');
+             // slideToggle 
+             // slide
+             break;
 
-            case '2':
-            $("#Number3Field").hide();
-            $("#Number2Field").show();
-            break;
+             case '2':
+             $("#Number3Field").hide();
+             $("#Number2Field").show();
+             break;
 
-            default:
-                $("#Number2Field").show();
-                $("#Number3Field").fadeIn('slow', function(){
-                    alert('Default value (3) enabled');
-                });
+             default:
+                 $("#Number2Field").show();
+                 $("#Number3Field").fadeIn('slow', function(){
+                     //alert('Default value (3) enabled');
+                 });
 
-                $(".form-group").css("font-weight", "bold");
-                $("#numberOfVariablesDiv").removeClass("form-group");
-        }
-        })
-    })
+                 $(".form-group").css("font-weight", "bold");
+                 $("#numberOfVariablesDiv").removeClass("form-group");
+         }
+         })
+     })
 </script>
 
 

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/jquery-3.6.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <title>Καλαθι του Νοικοκυριου</title>
+</head>
+
+<body>
+    <div class="container">
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Active</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+          <div class="dropdown-menu" id="kalathi">
+            
+            <!-- <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a> -->
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Disabled</a>
+        </li>
+      </ul>
+      <div class="row mt-5">
+        <div class="col-12 col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+            <div id="product1" onclick="addToCart(document.getElementById('product1'))" class="card" style="width: 18rem;">
+                <img class="card-img-top" src="files/kalathi.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Product 1</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Buy</a>
+                </div>
+              </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function addToCart(product) {
+        var productId = product.id;
+        var img = document.getElementById(productId).children[0];
+        var title = document.getElementById(productId).children[1].children[0].innerHTML;
+
+        document.getElementById("kalathi").innerHTML = '<a class="dropdown-item" href="#">Action</a>';
+      }
+    </script>
+</body>
+
+</html>

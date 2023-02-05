@@ -18,14 +18,14 @@
     <div id="form"></div>
 
     <script>
-        jQuery(document).ready(function(){
-            var form = $("#form").append("<form class='mt-5' id='formElement'></form>");
-            $("#formElement").append("<label for='username'>Username</label>");
-            $("#formElement").append("<input name='username' type='text' id='username' class='form-control'>");
-            $("#formElement").append("<label for='password'>Password</label>");
-            $("#formElement").append("<input name='password' type='text' id='password' class='form-control'><br/>");
-            $("#formElement").append("<button class='btn btn-success'>Submit</button>");
-        })
+          jQuery(document).ready(function(){ // append - prepend
+             var form = $("#form").append("<form class='mt-5' id='formElement'></form>");
+             $("#formElement").append("<label for='username'>Username</label>");
+             $("#formElement").append("<input name='username' type='text' id='username' class='form-control'>");
+             $("#formElement").append("<label for='password'>Password</label>");
+             $("#formElement").append("<input name='password' type='text' id='password' class='form-control'><br/>");
+             $("#formElement").append("<button class='btn btn-success'>Submit</button>");
+         }) 
     </script>
 </body>
 
