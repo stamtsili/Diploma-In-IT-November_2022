@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/jquery-3.6.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <title>Objects</title>
+</head>
+</html>
+
+
+<script>
+
+    class Student {
+        firstName;
+        lastName;
+        age;
+        address;
+
+        constructor(name, lastName, age, address) {
+        this.firstName = name;
+        this.lastName = lastName;
+        this.age = age;
+        this.address = address;
+        }
+    }
+
+    var student1 = new Student('nikos', 'ioannou', '20', 'tsimiski');
+    var student2 = new Student('giorgos', 'ioannou', '23', 'egnatia');
+
+    for(let i in student2) {
+        alert(student2[i]);
+    }
+
+    
+    
+</script>

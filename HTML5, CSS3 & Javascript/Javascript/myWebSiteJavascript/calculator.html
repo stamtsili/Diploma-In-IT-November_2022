@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/jquery-3.6.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <title>Calculator</title>
+</head>
+
+<body>
+    <div class="container mt-5 pt-5">
+        <h1 class="text-center">Calculator</h1>
+
+        <form>
+            <div class="form-group">
+              <label for="Number 1">Number 1</label>
+              <input type="number" class="form-control" id="Number 1" placeholder="Number">
+            </div>
+            <hr/>
+
+            <div class="form-group">
+                <label for="Number 2">Number 2</label>
+                <input type="number" class="form-control" id="Number 2" placeholder="Number">
+              </div>
+              <hr/>
+
+              <div class="form-group">
+                <label for="Number 3">Number 3</label>
+                <input type="number" class="form-control" id="Number 3" placeholder="Number">
+              </div>
+              <br/>
+
+               <div class="form-group">
+                <label for="CheckType">Check Type</label>
+                <input type="text" class="form-control" id="CheckType" placeholder="CheckType">
+              </div>
+              <br/>
+
+            <button type="button" onclick="Sum()" class="btn btn-primary">+</button>
+            <button type="button" onclick="Subtract()" class="btn btn-primary">-</button>
+            <button type="button" onclick="Multiply()" class="btn btn-primary">*</button>
+            <button type="button" onclick="Divide()" class="btn btn-primary">/</button>
+            <br/>
+          </form>
+    </div>
+</body>
+
+<script>
+    function Sum() {
+        var number1   = Number(document.getElementById("Number 1").value);
+        var number2   = Number(document.getElementById("Number 2").value);
+        var number3   = Number(document.getElementById("Number 3").value);
+        var checkType = (document.getElementById("CheckType").value) == 'yes';
+        var total     = 0;
+
+        
+        total = number1 + number2 + number3;
+
+        if (checkType) {
+            isNumber1Integer = number1 == parseInt(number1);
+            isNumber2Integer = number2 == parseInt(number2);
+            isNumber3Integer = number3 == parseInt(number3);
+
+            type = (isNumber1Integer && isNumber2Integer && isNumber3Integer) ? 'Integer: ' : 'Real: ';
+            alert(type + total);
+        } else {
+            alert(total);
+        }
+        
+    }
+
+    function Subtract() {
+        var number1 = Number(document.getElementById("Number 1").value);
+        var number2 = Number(document.getElementById("Number 2").value);
+        var number3 = Number(document.getElementById("Number 3").value);
+        var checkType = (document.getElementById("CheckType").value) == 'yes';
+        var total   = 0;
+
+        total = number1 - number2 - number3;
+
+        if (checkType) {
+            isNumber1Integer = number1 == parseInt(number1);
+            isNumber2Integer = number2 == parseInt(number2);
+            isNumber3Integer = number3 == parseInt(number3);
+
+            type = (isNumber1Integer && isNumber2Integer && isNumber3Integer) ? 'Integer: ' : 'Real: ';
+            alert(type + total);
+        } else {
+            alert(total);
+        }
+    }
+
+    function Multiply() {
+        var number1 = Number(document.getElementById("Number 1").value);
+        var number2 = Number(document.getElementById("Number 2").value);
+        var number3 = Number(document.getElementById("Number 3").value);
+        var total   = 0;
+
+        total = number1 * number2 * number3;
+
+        alert(total);
+    }
+
+    function Divide() {
+        var number1 = Number(document.getElementById("Number 1").value);
+        var number2 = Number(document.getElementById("Number 2").value);
+        var number3 = Number(document.getElementById("Number 3").value);
+        var total   = 0;
+
+        total = number1 / number2 / number3;
+        
+        alert(total);
+    }
+    
+</script>
+
+</html>
+
+<!-- Change multiple same lines
+ctrl + shift + L
+-->
